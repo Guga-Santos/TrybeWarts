@@ -105,7 +105,7 @@ git checkout joao-silva-trybewarts
 ```
 
 1. Clone o repositório
-  * `git clone git@github.com:betrybe/sd-019-b-project-trybewarts.git`.
+  * `git clone git@github.com:tryber/sd-019-b-project-trybewarts.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-019-b-project-trybewarts`
 
