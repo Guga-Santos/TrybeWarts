@@ -49,7 +49,7 @@ const sobrenome = document.querySelector('#input-lastname');
 const emailForms = document.querySelector('#input-email');
 const casas = document.querySelector('#house');
 const familia = document.querySelector('#label-family');
-const materias = document.querySelector('#label-content');
+const materias = document.querySelector('#input-content');
 const avaliacao = document.querySelector('#label-rate');
 const observacoes = document.querySelector('#textarea');
 
@@ -63,4 +63,8 @@ submit.addEventListener('click', (e) => {
  document.querySelector('#evaluation-form').innerHTML += `<p> Matérias: ${materias.value} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Observações: ${observacoes.value} </p>`
+})
+
+materias.addEventListener('click', (e) => {
+  e.target.classList.add('subject')
 })
