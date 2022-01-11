@@ -6,3 +6,12 @@
 .trybewarts-login {
     display: flex;
 }
+
+#evaluation-form {
+    display: flex;
+    width: 675px;
+}
+
+main {
+    display: flex;
+}
