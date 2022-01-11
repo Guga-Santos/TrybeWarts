@@ -20,3 +20,11 @@ main {
 #trybewarts-forms-logo {
     height: 500px;
 }
+
+.nomeCompleto {
+    display: flex;
+}
+
+.email-house {
+    display: flex;
+}
