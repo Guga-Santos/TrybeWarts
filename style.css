@@ -1,40 +1,41 @@
 .header {
-    display: flex;
-    background-color: rgb(50, 167, 145);
-    justify-content: space-between;
+  display: flex;
+  background-color: rgb(50, 167, 145);
+  justify-content: space-between;
 }
+
 .trybewarts-login {
-    display: flex;
+  display: flex;
 }
 
 #evaluation-form {
-    display: flex;
-    width: 675px;
-    flex-direction: column;
+  display: flex;
+  width: 675px;
+  flex-direction: column;
 }
 
 main {
-    display: flex;
+  display: flex;
 }
 
 #trybewarts-forms-logo {
-    height: 500px;
+  height: 500px;
 }
 
 .nomeCompleto {
-    display: flex;
+  display: flex;
 }
 
 .email-house {
-    display: flex;
+  display: flex;
 }
 
 #input-family {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #input-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
