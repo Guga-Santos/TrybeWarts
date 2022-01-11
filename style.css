@@ -33,3 +33,8 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+#input-content {
+    display: flex;
+    flex-direction: column;
+}
