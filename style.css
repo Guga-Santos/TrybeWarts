@@ -28,3 +28,8 @@ main {
 .email-house {
     display: flex;
 }
+
+#input-family {
+    display: flex;
+    flex-direction: column;
+}
