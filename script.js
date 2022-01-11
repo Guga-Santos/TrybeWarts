@@ -16,31 +16,27 @@ const agreement = document.querySelector('#agreement');
 const submit = document.querySelector('#submit-btn');
 
 function checked() {
-  if(agreement.checked === true) {
+  if (agreement.checked === true) {
     submit.removeAttribute('disabled');
   } else {
-    submit.setAttribute('disabled', 'disabled')
+    submit.setAttribute('disabled', 'disabled');
   }
 }
 
-agreement.addEventListener('click', checked)
-
+agreement.addEventListener('click', checked);
 
 // ---------------------------------------------------------------
 
 const counter = document.querySelector('#counter');
 const texto = document.querySelector('#textarea');
 
-document.querySelector('#textarea').textLength
-document.querySelector('#textarea').maxLength
-
 function contador(e) {
-  const textLength = e.target.maxLength - e.target.textLength
-  counter.innerHTML = textLength
+  const textLength = e.target.maxLength - e.target.textLength;
+  counter.innerHTML = textLength;
 }
 
-texto.addEventListener('keyup', contador)
-texto.addEventListener('keydown', contador)
+texto.addEventListener('keyup', contador);
+texto.addEventListener('keydown', contador);
 
 // -----------------------------------------------------------------
 
@@ -50,40 +46,37 @@ const emailForms = document.querySelector('#input-email');
 const casas = document.querySelector('#house');
 const valorSelect = casas.options[casas.selectedIndex].value;
 const familia = document.querySelector('#label-family');
-<<<<<<< HEAD
-const materias = document.querySelector('#input-content');
-=======
 const materias = document.querySelectorAll('.subject');
 const labelContent = document.querySelector('#input-content');
->>>>>>> dac33b30f0f561140dad90e31d07ecb85ab9c40f
 const avaliacao = document.querySelector('#label-rate');
 const observacoes = document.querySelector('#textarea');
-const teste = subject();
+
+labelContent.addEventListener('click', (e) => {
+  if (e.target.classList.contains('subject')) {
+    e.target.classList.remove('subject');
+  } else {
+    e.target.classList.add('subject');
+  }
+});
+
+function subject() {
+  const checked1 = [];
+  for (let i = 0; i < materias.length; i += 1) {
+    checked1.push(document.getElementsByClassName('subject')[i].value);
+  }
+  console.log(checked1);
+  return checked1;
+}
 
 submit.addEventListener('click', (e) => {
-  e.preventDefault()
- document.querySelector('#evaluation-form').innerHTML = ''
- document.querySelector('#evaluation-form').innerHTML = `<p> Nome: ${nome.value} ${sobrenome.value} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Email: ${emailForms.value}</p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Casa: ${valorSelect} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Família: ${familia.value} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Matérias: ${teste} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Observações: ${observacoes.value} </p>`
-})
-
-labelContent.addEventListener('click', (e) =>{
-  if(e.target.classList.contains('subject')){
-    e.target.classList.remove('subject')
-  }
-  else{
-    e.target.classList.add('subject')
-  }
-})
-function subject(){
-  const checked1 = [];
-  for(let i = 0; i < materias.length; i += 1){
-    checked1.push[document.querySelectorAll('.subject')[i].value];
-  }
-  console.log(checked1)
-}
+  e.preventDefault();
+  const evaluation = document.querySelector('#evaluation-form');
+  evaluation.innerHTML = '';
+  evaluation.innerHTML = `<p> Nome: ${nome.value} ${sobrenome.value} </p>`;
+  evaluation.innerHTML += `<p> Email: ${emailForms.value}</p>`;
+  evaluation.innerHTML += `<p> Casa: ${valorSelect} </p>`;
+  evaluation.innerHTML += `<p> Família: ${familia.value} </p>`;
+  evaluation.innerHTML += `<p> Matérias: ${subject} </p>`;
+  evaluation.innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`;
+  evaluation.innerHTML += `<p> Observações: ${observacoes.value} </p>`;
+});
