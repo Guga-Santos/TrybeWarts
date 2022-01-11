@@ -48,23 +48,42 @@ const nome = document.querySelector('#input-name');
 const sobrenome = document.querySelector('#input-lastname');
 const emailForms = document.querySelector('#input-email');
 const casas = document.querySelector('#house');
+const valorSelect = casas.options[casas.selectedIndex].value;
 const familia = document.querySelector('#label-family');
+<<<<<<< HEAD
 const materias = document.querySelector('#input-content');
+=======
+const materias = document.querySelectorAll('.subject');
+const labelContent = document.querySelector('#input-content');
+>>>>>>> dac33b30f0f561140dad90e31d07ecb85ab9c40f
 const avaliacao = document.querySelector('#label-rate');
 const observacoes = document.querySelector('#textarea');
+const teste = subject();
 
 submit.addEventListener('click', (e) => {
   e.preventDefault()
  document.querySelector('#evaluation-form').innerHTML = ''
  document.querySelector('#evaluation-form').innerHTML = `<p> Nome: ${nome.value} ${sobrenome.value} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Email: ${emailForms.value}</p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Casa: ${casas.value} </p>`
+ document.querySelector('#evaluation-form').innerHTML += `<p> Casa: ${valorSelect} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Família: ${familia.value} </p>`
- document.querySelector('#evaluation-form').innerHTML += `<p> Matérias: ${materias.value} </p>`
+ document.querySelector('#evaluation-form').innerHTML += `<p> Matérias: ${teste} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`
  document.querySelector('#evaluation-form').innerHTML += `<p> Observações: ${observacoes.value} </p>`
 })
 
-materias.addEventListener('click', (e) => {
-  e.target.classList.add('subject')
+labelContent.addEventListener('click', (e) =>{
+  if(e.target.classList.contains('subject')){
+    e.target.classList.remove('subject')
+  }
+  else{
+    e.target.classList.add('subject')
+  }
 })
+function subject(){
+  const checked1 = [];
+  for(let i = 0; i < materias.length; i += 1){
+    checked1.push[document.querySelectorAll('.subject')[i].value];
+  }
+  console.log(checked1)
+}
