@@ -39,44 +39,39 @@ texto.addEventListener('keyup', contador);
 texto.addEventListener('keydown', contador);
 
 // -----------------------------------------------------------------
+const labelContent = document.querySelector('#input-content');
+labelContent.addEventListener('click', (e) => {
+  if (e.target.classList.contains('subjectX')) {
+    e.target.classList.remove('subjectX');
+  } else {
+    e.target.classList.add('subjectX');
+  }
+  document.querySelector('#label-content').classList.remove('subjectX');
+});
 
 const nome = document.querySelector('#input-name');
 const sobrenome = document.querySelector('#input-lastname');
 const emailForms = document.querySelector('#input-email');
 const casas = document.querySelector('#house');
-const valorSelect = casas.options[casas.selectedIndex].value;
-const familia = document.querySelector('#label-family');
-const materias = document.querySelectorAll('.subject');
-const labelContent = document.querySelector('#input-content');
-const avaliacao = document.querySelector('#label-rate');
 const observacoes = document.querySelector('#textarea');
-
-labelContent.addEventListener('click', (e) => {
-  if (e.target.classList.contains('subject')) {
-    e.target.classList.remove('subject');
-  } else {
-    e.target.classList.add('subject');
-  }
-});
-
-function subject() {
-  const checked1 = [];
-  for (let i = 0; i < materias.length; i += 1) {
-    checked1.push(document.getElementsByClassName('subject')[i].value);
-  }
-  console.log(checked1);
-  return checked1;
-}
+const evaluation = document.querySelector('#evaluation-form');
 
 submit.addEventListener('click', (e) => {
   e.preventDefault();
-  const evaluation = document.querySelector('#evaluation-form');
+  const familia = document.querySelector('input[name="family"]:checked');
+  const avaliacao = document.querySelector('input[name="rate"]:checked');
+  const materias = document.querySelectorAll('.subjectX');
+  const valorSelect = casas.options[casas.selectedIndex].value;
+  let materiasValue = '';
+  for (let i = 0; i < materias.length; i += 1) {
+    materiasValue += `${materias[i].value}, `;
+  }
   evaluation.innerHTML = '';
   evaluation.innerHTML = `<p> Nome: ${nome.value} ${sobrenome.value} </p>`;
   evaluation.innerHTML += `<p> Email: ${emailForms.value}</p>`;
   evaluation.innerHTML += `<p> Casa: ${valorSelect} </p>`;
   evaluation.innerHTML += `<p> Família: ${familia.value} </p>`;
-  evaluation.innerHTML += `<p> Matérias: ${subject} </p>`;
+  evaluation.innerHTML += `<p> Matérias: ${materiasValue} </p>`;
   evaluation.innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`;
   evaluation.innerHTML += `<p> Observações: ${observacoes.value} </p>`;
 });
