@@ -1,3 +1,4 @@
+/* Botão login - Função para retornar um Alert se o login e Senha estiver certo ou Errado. */
 const loginBtn = document.querySelector('#login-btn');
 const email = document.querySelector('#email');
 const senha = document.querySelector('#senha');
@@ -9,24 +10,19 @@ loginBtn.addEventListener('click', () => {
     alert('Email ou senha inválidos.');
   }
 });
-
-// -----------------------------------------------------------
-
+/* Botão Submit - Função para da o Submit apenas quando a opção
+concorda estiver selecionada. */
 const agreement = document.querySelector('#agreement');
 const submit = document.querySelector('#submit-btn');
 
-function checked() {
+agreement.addEventListener('click', () => {
   if (agreement.checked === true) {
     submit.removeAttribute('disabled');
   } else {
     submit.setAttribute('disabled', 'disabled');
   }
-}
-
-agreement.addEventListener('click', checked);
-
-// ---------------------------------------------------------------
-
+});
+/* Função para da colocar um contatdor de Caracter no TextArea. */
 const counter = document.querySelector('#counter');
 const texto = document.querySelector('#textarea');
 
@@ -37,9 +33,9 @@ function contador(e) {
 
 texto.addEventListener('keyup', contador);
 texto.addEventListener('keydown', contador);
-
-// -----------------------------------------------------------------
+/* checkbox das materias - Função para colocar/remover atributo dos inputs do checkbox */
 const labelContent = document.querySelector('#input-content');
+
 labelContent.addEventListener('click', (e) => {
   if (e.target.classList.contains('subjectX')) {
     e.target.classList.remove('subjectX');
@@ -48,7 +44,7 @@ labelContent.addEventListener('click', (e) => {
   }
   document.querySelector('#label-content').classList.remove('subjectX');
 });
-
+/* Botão Submit - Função para apagar o Fomulário e deixar apenas as Respostas no Navegador */
 const nome = document.querySelector('#input-name');
 const sobrenome = document.querySelector('#input-lastname');
 const emailForms = document.querySelector('#input-email');
@@ -67,11 +63,11 @@ submit.addEventListener('click', (e) => {
     materiasValue += `${materias[i].value}, `;
   }
   evaluation.innerHTML = '';
-  evaluation.innerHTML = `<p> Nome: ${nome.value} ${sobrenome.value} </p>`;
-  evaluation.innerHTML += `<p> Email: ${emailForms.value}</p>`;
-  evaluation.innerHTML += `<p> Casa: ${valorSelect} </p>`;
-  evaluation.innerHTML += `<p> Família: ${familia.value} </p>`;
-  evaluation.innerHTML += `<p> Matérias: ${materiasValue} </p>`;
-  evaluation.innerHTML += `<p> Avaliação: ${avaliacao.value} </p>`;
-  evaluation.innerHTML += `<p> Observações: ${observacoes.value} </p>`;
+  evaluation.innerHTML = `<p> <span>Nome:</span> ${nome.value} ${sobrenome.value} </p>`;
+  evaluation.innerHTML += `<p> <span>Email:</span> ${emailForms.value}</p>`;
+  evaluation.innerHTML += `<p> <span>Casa:</span> ${valorSelect} </p>`;
+  evaluation.innerHTML += `<p> <span>Família:</span> ${familia.value} </p>`;
+  evaluation.innerHTML += `<p> <span>Matérias:</span> ${materiasValue} </p>`;
+  evaluation.innerHTML += `<p> <span>Avaliação:</span> ${avaliacao.value} </p>`;
+  evaluation.innerHTML += `<p> <span>Observações:</span> ${observacoes.value} </p>`;
 });
