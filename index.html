@@ -36,35 +36,72 @@
       </div>
       <section id="input-family">
         <label id="label-family" for="family">Qual sua família?</label>
-        <input type="radio" name="family" value="Frontend">Frontend
-        <input type="radio" name="family" value="Backend">Backend
-        <input type="radio" name="family" value="FullStack">FullStack
+        <label for="id-frontend">
+          <input type="radio" name="family" id="id-frontend" value="Frontend"> Frontend
+        </label>
+        <label for="id-backend">
+          <input type="radio" name="family" id="id-backend" value="Backend"> Backend
+        </label>
+        <label for="id-fullstack">
+          <input type="radio" name="family" id="id-fullstack" value="FullStack"> FullStack
+        </label>
       </section>
       <section id="input-content">
-        <label for="" id="label-content" class="label-content">Qual conteúdo você está com mais vontade de
-          aprender?</label>
-        <input type="checkbox" name="" class="subject" value="HoFs">HoFs
-        <input type="checkbox" name="" class="subject" value="Jest">Jest
-        <input type="checkbox" name="" class="subject" value="Promises">Promises
-        <input type="checkbox" name="" class="subject" value="React">React
-        <input type="checkbox" name="" class="subject" value="SQL">SQL
-        <input type="checkbox" name="" class="subject" value="Python">Python
+        <label for="" id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
+        <label for="id-hofs">
+          <input type="checkbox" class="subject" id="id-hofs" name="Subjects" value="HoFs"> HoFs
+        </label>
+        <label for="id-jest">
+          <input type="checkbox" class="subject" id="id-jest" name="Subjects" value="Jest"> Jest
+        </label>
+        <label for="id-promises">
+          <input type="checkbox" class="subject" id="id-promises" name="Subjects" value="Promises"> Promises
+        </label>
+        <label for="id-react">
+          <input type="checkbox" class="subject" id="id-react" name="Subjects" value="React"> React
+        </label>
+        <label for="id-sql">
+          <input type="checkbox" class="subject" id="id-sql" name="Subjects" value="SQL"> SQL
+        </label>
+        <label for="id-python">
+          <input type="checkbox" class="subject" id="id-python" name="Subjects" value="Python"> Python
+        </label>
       </section>
       <section id="input-rate">
         <label for="" id="label-rate">Como você avalia a Trybewarts?</label>
-        <input type="radio" name="rate" value="1">1
-        <input type="radio" name="rate" value="2">2
-        <input type="radio" name="rate" value="3">3
-        <input type="radio" name="rate" value="4">4
-        <input type="radio" name="rate" value="5">5
-        <input type="radio" name="rate" value="6">6
-        <input type="radio" name="rate" value="7">7
-        <input type="radio" name="rate" value="8">8
-        <input type="radio" name="rate" value="9">9
-        <input type="radio" name="rate" value="10">10
+        <label for="option-1">
+          <input type="radio" name="rate" id="option-1" value="1"> 1
+        </label>
+        <label for="option-2">
+          <input type="radio" name="rate" id="option-2" value="2"> 2
+        </label>
+        <label for="option-3">
+          <input type="radio" name="rate" id="option-3" value="3"> 3
+        </label>
+        <label for="option-4">
+          <input type="radio" name="rate" id="option-4" value="4"> 4
+        </label>
+        <label for="option-5">
+          <input type="radio" name="rate" id="option-5" value="5"> 5
+        </label>
+        <label for="option-6">
+          <input type="radio" name="rate" id="option-6" value="6"> 6
+        </label>
+        <label for="option-7">
+          <input type="radio" name="rate" id="option-7" value="7"> 7
+        </label>
+        <label for="option-8">
+          <input type="radio" name="rate" id="option-8" value="8"> 8
+        </label>
+        <label for="option-9">
+          <input type="radio" name="rate" id="option-9" value="9"> 9
+        </label>
+        <label for="option-10">
+          <input type="radio" name="rate" id="option-10" value="10"> 10
+        </label>
       </section>
       <section id="input-textarea">
-        <label for="" class="textarea">Deixe seu comentário:</label>
+        <p for="" class="textarea">Deixe seu comentário:</p>
         <textarea name="" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
         <label for="" id="counter">500</label>
       </section>
@@ -76,8 +113,8 @@
     </form>
     <img src="images/trybewarts-colored.svg" alt="" id="trybewarts-forms-logo">
   </main>
+  <footer>Direitos reservados à Trybewarts©</footer>
   <script src="script.js"></script>
 </body>
-<footer>Direitos reservados à Trybewarts©</footer>
 
 </html>
